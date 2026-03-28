@@ -1,4 +1,4 @@
-ARG BUILD_FROM
+ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest
 FROM $BUILD_FROM
 
 RUN apk add --no-cache \
@@ -8,7 +8,7 @@ RUN apk add --no-cache \
     ttf-freefont
 
 COPY requirements.txt /tmp/requirements.txt
-RUN pip3 install --no-cache-dir -r /tmp/requirements.txt
+RUN python3 -m pip install --break-system-packages --no-cache-dir -r /tmp/requirements.txt
 
 COPY app /app
 COPY run.sh /run.sh
