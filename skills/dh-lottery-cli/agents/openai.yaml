@@ -1,0 +1,4 @@
+interface:
+  display_name: "DH Lottery CLI"
+  short_description: "Run the local DH Lottery buyer safely from this repository."
+  default_prompt: "Use $dh-lottery-cli to validate the config or run the local DH Lottery buyer from this repository."

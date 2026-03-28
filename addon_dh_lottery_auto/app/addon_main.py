@@ -31,7 +31,7 @@ POLL_INTERVAL_SECONDS = 10
 HEARTBEAT_SAVE_INTERVAL_SECONDS = 30
 
 
-def detect_chromium_executable() -> str:
+def detect_chromium_executable() -> str | None:
     candidates = (
         os.getenv("CHROMIUM_EXECUTABLE"),
         "/usr/bin/chromium-browser",
@@ -40,7 +40,7 @@ def detect_chromium_executable() -> str:
     for candidate in candidates:
         if candidate and Path(candidate).exists():
             return candidate
-    raise RuntimeError("Chromium 실행 파일을 찾지 못했습니다.")
+    return None
 
 
 def detect_chromium_version(executable_path: str) -> str:
@@ -90,8 +90,11 @@ def parse_games_count(value: object, name: str) -> int:
 def load_runtime_config() -> RuntimeConfig:
     options = json.loads(OPTIONS_PATH.read_text(encoding="utf-8"))
     chromium_executable = detect_chromium_executable()
-    print(f"Using Chromium: {chromium_executable}")
-    print(f"Chromium version: {detect_chromium_version(chromium_executable)}")
+    if chromium_executable:
+        print(f"Using Chromium: {chromium_executable}")
+        print(f"Chromium version: {detect_chromium_version(chromium_executable)}")
+    else:
+        print("Using Playwright bundled Chromium")
     telegram_bot_token = optional_option(options, "telegram_bot_token")
     telegram_chat_id = optional_option(options, "telegram_chat_id")
     telegram_config = None

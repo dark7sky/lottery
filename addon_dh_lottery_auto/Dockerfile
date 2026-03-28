@@ -1,14 +1,11 @@
-ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest
+ARG BUILD_FROM=python:3.12-bookworm
 FROM $BUILD_FROM
 
-RUN apk add --no-cache \
-    chromium \
-    py3-pip \
-    python3 \
-    ttf-freefont
+ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
 
 COPY requirements.txt /tmp/requirements.txt
-RUN python3 -m pip install --break-system-packages --no-cache-dir -r /tmp/requirements.txt
+RUN python3 -m pip install --no-cache-dir -r /tmp/requirements.txt \
+    && python3 -m playwright install --with-deps chromium
 
 COPY app /app
 COPY run.sh /run.sh
