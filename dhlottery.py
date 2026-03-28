@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import argparse
 import os
-import sys
 from pathlib import Path
 
 try:
@@ -15,9 +14,6 @@ except ModuleNotFoundError as exc:  # pragma: no cover - user environment issue
     ) from exc
 
 REPO_ROOT = Path(__file__).resolve().parent
-PACKAGE_ROOT = REPO_ROOT / "addon_dh_lottery_auto" / "app"
-if str(PACKAGE_ROOT) not in sys.path:
-    sys.path.insert(0, str(PACKAGE_ROOT))
 
 from dhlottery_automation import (  # noqa: E402
     BrowserConfig,
