@@ -1,0 +1,19 @@
+configuration:
+  dhlottery_id:
+    name: 동행복권 아이디
+    description: dhlottery.co.kr 로그인 아이디
+  dhlottery_pw:
+    name: 동행복권 비밀번호
+    description: dhlottery.co.kr 로그인 비밀번호
+  telegram_bot_token:
+    name: 텔레그램 봇 토큰
+    description: 선택적으로 Telegram 구매 알림을 보낼 봇 토큰
+  telegram_chat_id:
+    name: 텔레그램 채팅 ID
+    description: 선택적으로 Telegram 알림을 받을 채팅 ID
+  games_per_purchase:
+    name: 회당 구매 게임 수
+    description: 한 번 실행될 때 자동으로 구매할 게임 수
+  interval_days:
+    name: 자동 구매 주기(일)
+    description: 며칠마다 자동 구매를 실행할지 설정합니다

@@ -1,0 +1,8 @@
+request_purchase:
+  name: Request purchase
+  description: Request an immediate lottery purchase by writing request.json for the add-on.
+  fields:
+    games:
+      name: Games
+      description: Optional override for how many games to buy on this run. Must be between 1 and 5.
+      required: false

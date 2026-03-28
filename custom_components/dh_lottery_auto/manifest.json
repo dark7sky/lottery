@@ -1,0 +1,11 @@
+{
+  "domain": "dh_lottery_auto",
+  "name": "DH Lottery Auto",
+  "codeowners": [],
+  "config_flow": true,
+  "dependencies": [],
+  "integration_type": "hub",
+  "iot_class": "local_polling",
+  "single_config_entry": true,
+  "version": "0.1.0"
+}

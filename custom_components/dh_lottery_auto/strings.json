@@ -1,0 +1,76 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "DH Lottery Auto",
+        "description": "Set up the companion integration for the DH Lottery Auto add-on.",
+        "data": {
+          "notification_mode": "Home Assistant notification mode"
+        }
+      },
+      "notify_entity": {
+        "title": "Notify Entity",
+        "description": "Choose which notify entity should receive purchase alerts.",
+        "data": {
+          "notify_entity_id": "Notify entity"
+        }
+      },
+      "init": {
+        "title": "DH Lottery Auto options",
+        "data": {
+          "notification_mode": "Home Assistant notification mode"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "DH Lottery Auto options",
+        "data": {
+          "notification_mode": "Home Assistant notification mode"
+        }
+      },
+      "notify_entity": {
+        "title": "Notify Entity",
+        "description": "Choose which notify entity should receive purchase alerts.",
+        "data": {
+          "notify_entity_id": "Notify entity"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "status": {
+        "name": "Status"
+      },
+      "last_result": {
+        "name": "Last result"
+      },
+      "this_week_numbers": {
+        "name": "This week numbers"
+      },
+      "next_run": {
+        "name": "Next run"
+      }
+    },
+    "button": {
+      "request_purchase": {
+        "name": "Request purchase now"
+      }
+    }
+  },
+  "services": {
+    "request_purchase": {
+      "name": "Request purchase",
+      "description": "Request an immediate lottery purchase by writing request.json for the add-on.",
+      "fields": {
+        "games": {
+          "name": "Games",
+          "description": "Optional override for how many games to buy on this run. Must be between 1 and 5."
+        }
+      }
+    }
+  }
+}

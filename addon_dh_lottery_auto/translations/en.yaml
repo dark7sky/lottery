@@ -1,0 +1,19 @@
+configuration:
+  dhlottery_id:
+    name: DH Lottery ID
+    description: Login ID for dhlottery.co.kr
+  dhlottery_pw:
+    name: DH Lottery Password
+    description: Login password for dhlottery.co.kr
+  telegram_bot_token:
+    name: Telegram Bot Token
+    description: Optional bot token used for Telegram purchase notifications
+  telegram_chat_id:
+    name: Telegram Chat ID
+    description: Optional chat ID that will receive Telegram notifications
+  games_per_purchase:
+    name: Games per purchase
+    description: Number of auto-pick games to buy on each run
+  interval_days:
+    name: Interval days
+    description: Number of days between scheduled purchases
